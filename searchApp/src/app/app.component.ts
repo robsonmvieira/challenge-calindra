@@ -14,6 +14,7 @@ export class AppComponent {
 
   products: Product[] = []
   suggestions: Suggestion[] = []
+  returnNoContent = false
 
   constructor(private appService: AppService) { }
 
@@ -21,7 +22,11 @@ export class AppComponent {
     if(!this.initialValue) {
       return
     }
+    this.returnNoContent = false
     this.appService.getData(this.initialValue).subscribe(resp => {
+      if(!resp.products.length && !resp.suggestions.length) {
+        this.returnNoContent = true
+      }
       this.products = resp.products.map(item => this.transformToProduct(item))
       this.suggestions = resp.suggestions
     })

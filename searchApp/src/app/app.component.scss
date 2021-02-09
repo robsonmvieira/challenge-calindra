@@ -79,16 +79,24 @@
             color: #333;
           }
         }
+      }
 
+      & > .no-content {
+        text-align: center;
+        margin-top: 50px;
       }
     }
     & > .suggestions {
       display: flex;
       flex-direction: column;
 
-       & > .suggestion {
-        //  margin-bottom: 10px;
-         font-family: 'Open Sans', sans-serif;
+      & > .title {
+        font-family: 'Open Sans', sans-serif;
+        text-align: center;
+      }
+
+      & > .suggestion {
+        font-family: 'Open Sans', sans-serif;
          background: rgb(238, 236, 236);
          border: none;
          padding: 10px;

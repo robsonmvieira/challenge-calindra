@@ -15,7 +15,6 @@ export class AppService {
     const query = param.split(' ').join('-')
     const url = `https://mystique-v2-americanas.juno.b2w.io/autocomplete?content=${query}&source=nanook`
     return this.httpClient.get(url).pipe(
-      tap((x: Response) => console.log(x.products)),
       map((x: Response) => {return x})
     )
   }

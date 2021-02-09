@@ -25,8 +25,12 @@
               <span class="value">{{ item.type }}</span>
             </div>
         </div>
+        <div class="no-content" *ngIf="returnNoContent">
+          <span>Ops..Não achamos o produto que você está buscando. Que tal Procurar com outro termo ??</span>
+        </div>
     </div>
-    <div class="suggestions" >
+    <div class="suggestions">
+      <span class="title" *ngIf="suggestions.length > 0">Sugestões</span>
       <span class="suggestion" (click)="searchBysuggestion(suggestion.term)" *ngFor="let suggestion of suggestions">{{ suggestion.term }}</span>
     </div>
   </div>
