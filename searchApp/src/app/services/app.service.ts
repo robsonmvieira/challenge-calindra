@@ -2,9 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
 import { Observable } from "rxjs";
 import { Response } from "../models/response";
-import { map, tap } from 'rxjs/operators';
-import { Product } from "../models/product";
-import { Meta } from "@angular/platform-browser";
+import { map } from 'rxjs/operators';
 @Injectable({ providedIn: 'root'})
 
 export class AppService {
